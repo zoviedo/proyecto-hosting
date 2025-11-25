@@ -1,0 +1,8 @@
+# Ignorar dependencias locales
+node_modules
+
+# Ignorar el build local de Next.js
+.next
+
+# Ignorar logs de pnpm
+pnpm-debug.log
