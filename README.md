@@ -335,6 +335,7 @@ Dentro de la carpeta `/backend`, crea un archivo llamado `.env`:
 PORT=3001
 ROBLE_PROJECT_CONTRACT=proyectohosting_de7f72c4e7
 PROJECTS_TABLE_NAME=proyectos_hosting
+USER_METADATA_TABLE_NAME=user_metadata
 ```
 
 ### 3️⃣ Levantar toda la plataforma con un solo comando
