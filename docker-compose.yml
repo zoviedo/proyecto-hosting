@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  reverse-proxy:
+    build:
+      context: ./backend/nginx-proxy
+    container_name: roble-reverse-proxy
+    ports:
+      - "80:80"
+    networks:
+      - roble-network
+    depends_on:
+      - auth-service
+      - project-manager
+      - frontend
+
+  auth-service:
+    build: ./backend/auth-service
+    container_name: roble-auth-service
+    ports:
+      - "3000:3000"
+    environment:
+      - ROBLE_AUTH_TOKEN=${ROBLE_PROJECT_CONTRACT}
+      - USER_METADATA_TABLE_NAME=${USER_METADATA_TABLE_NAME}
+    dns:
+      - 8.8.8.8
+    networks:
+      - roble-network
+
+  project-manager:
+    build: ./backend/project-manager-service
+    container_name: roble-project-manager
+    ports:
+      - "3001:3001"
+    environment:
+      - ROBLE_DB_TOKEN=${ROBLE_PROJECT_CONTRACT}
+      - PROJECTS_TABLE_NAME=${PROJECTS_TABLE_NAME}
+      - USER_METADATA_TABLE_NAME=${USER_METADATA_TABLE_NAME}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - auth-service
+    dns:
+      - 8.8.8.8
+    networks:
+      - roble-network
+
+  container-manager:
+    build: ./backend/container-manager-service
+    container_name: roble-container-manager
+    ports:
+      - "3002:3002"
+    environment:
+      - ROBLE_DB_TOKEN=${ROBLE_PROJECT_CONTRACT}
+      - PROJECTS_TABLE_NAME=${PROJECTS_TABLE_NAME}
+      - USER_METADATA_TABLE_NAME=${USER_METADATA_TABLE_NAME}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - container_manager_data:/usr/src/app/
+    dns:
+      - 8.8.8.8
+    networks:
+      - roble-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: roble-frontend
+    networks:
+      - roble-network
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost
+
+networks:
+  roble-network:
+    driver: bridge
+
+volumes:
+  container_manager_data:
