@@ -328,11 +328,10 @@ A continuación se muestra la forma recomendada de levantar toda la plataforma u
 git clone https://github.com/zoviedo/proyecto-hosting.git
 ```
 
-### 2️⃣ Crear el archivo `.env` del backend
-Dentro de la carpeta `/backend`, crea un archivo llamado `.env`:
+### 2️⃣ Crear el archivo `.env`
+Dentro de la raiz del proyecto, crea un archivo llamado `.env`:
 
 ```
-PORT=3001
 ROBLE_PROJECT_CONTRACT=proyectohosting_de7f72c4e7
 PROJECTS_TABLE_NAME=proyectos_hosting
 USER_METADATA_TABLE_NAME=user_metadata
