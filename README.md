@@ -464,8 +464,8 @@ La plataforma utiliza plantillas preconfiguradas que permiten desplegar aplicaci
 A continuación se muestra un video que ilustra el funcionamiento de la plataforma:
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=Yoe7kQKmtVE" target="_blank">
-    <img width="800" alt="Demo Plataforma" src="https://img.youtube.com/vi/Yoe7kQKmtVE/0.jpg" />
+  <a href="https://www.youtube.com/watch?v=-I136afZ_2Y" target="_blank">
+    <img width="800" alt="Demo Plataforma" src="https://img.youtube.com/vi/-I136afZ_2Y/0.jpg" />
   </a>
 </p>
 
