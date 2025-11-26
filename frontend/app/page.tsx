@@ -41,27 +41,23 @@ export default function LandingPage() {
                 </svg>
               </Button>
             </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-primary/30 hover:bg-primary/10 text-lg px-8 py-6 bg-transparent"
+            <a
+              href="https://youtu.be/-I136afZ_2Y"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              View Demo
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary/30 hover:bg-primary/10 text-lg px-8 py-6 bg-transparent"
+              >
+                View Demo
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </Button>
+            </a>
           </div>
         </div>
       </section>
